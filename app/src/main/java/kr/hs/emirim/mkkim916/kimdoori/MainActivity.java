@@ -4,16 +4,19 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public final static String TAG = "김두리:Main";
+    private ImageView mImageViewFriendVisual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG,"onCreate 메소드 호출~");
         setContentView(R.layout.activity_main);
+        mImageViewFriendVisual = (ImageView) findViewById(R.id.friend_visual);
         Log.d(TAG,"Activity_main 레이아웃 세팅~");
     }
     void onClick(View view){

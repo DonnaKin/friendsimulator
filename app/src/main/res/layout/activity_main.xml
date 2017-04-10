@@ -15,6 +15,12 @@
         android:text="김두리 시뮬레이터"
         android:textSize="40sp" />
 
+    <ImageView
+        android:id="@+id/friend_visual"
+        android:layout_gravity="center"
+        android:src="@drawable/doori_1"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
     <Button
         android:id="@+id/button1"
         android:layout_width="match_parent"
