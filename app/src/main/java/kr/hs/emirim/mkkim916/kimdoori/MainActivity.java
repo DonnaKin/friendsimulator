@@ -2,6 +2,7 @@ package kr.hs.emirim.mkkim916.kimdoori;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public final static String TAG = "김두리:Main";
     private ImageView mImageViewFriendVisual;
     private MediaPlayer mMediaPlayer;
+    private Vibrator mVib;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mMediaPlayer = MediaPlayer.create(this, R.raw.a06);
         mMediaPlayer.setLooping(false);
         mMediaPlayer.start();
+        mVib = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        mVib.vibrate(500);
     }
 
     @Override
@@ -35,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view){
         Log.d(TAG,"onClick 메소드 호출~");
         Log.d(TAG,"클릭된 뷰 id : "+view.getId());
-
+        mVib.vibrate(500);
         if(mMediaPlayer.isPlaying()){
             mMediaPlayer.pause();
         }
