@@ -77,7 +77,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             default:
                 Log.d(TAG,"모르는 녀석 클릭");
-                Toast.makeText(this, "니 뭐하냐",Toast.LENGTH_SHORT).show(); break;
+                Toast.makeText(this, "니 뭐하냐",Toast.LENGTH_SHORT).show();
+                mMediaPlayer = MediaPlayer.create(this, R.raw.a06);
+                mMediaPlayer.start();
+                break;
         }
         Log.d(TAG,"onClick 메소드 무사히 종료");
 
