@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public final static String TAG = "김두리:Main";
     private ImageView mImageViewFriendVisual;
 
@@ -19,24 +19,31 @@ public class MainActivity extends AppCompatActivity {
         mImageViewFriendVisual = (ImageView) findViewById(R.id.friend_visual);
         Log.d(TAG,"Activity_main 레이아웃 세팅~");
     }
-    void onClick(View view){
+
+    @Override
+    public void onClick(View view){
         Log.d(TAG,"onClick 메소드 호출~");
         Log.d(TAG,"클릭된 뷰 id : "+view.getId());
         switch(view.getId()){
             case R.id.button1:
                 Log.d(TAG,"버튼1 클릭");
+                mImageViewFriendVisual.setImageResource(R.drawable.doori_2);
                 Toast.makeText(this, "잠깐",Toast.LENGTH_SHORT).show(); break;
             case R.id.button2:
                 Log.d(TAG,"버튼2 클릭");
+                mImageViewFriendVisual.setImageResource(R.drawable.doori_3);
                 Toast.makeText(this, "아니 근데에",Toast.LENGTH_SHORT).show(); break;
             case R.id.button3:
                 Log.d(TAG,"버튼3 클릭");
+                mImageViewFriendVisual.setImageResource(R.drawable.doori_2);
                 Toast.makeText(this, "있잖아~",Toast.LENGTH_SHORT).show(); break;
             case R.id.button4:
                 Log.d(TAG,"버튼4 클릭");
+                mImageViewFriendVisual.setImageResource(R.drawable.doori_1);
                 Toast.makeText(this, "선생니임~!",Toast.LENGTH_SHORT).show(); break;
             case R.id.button5:
                 Log.d(TAG,"버튼5 클릭");
+                mImageViewFriendVisual.setImageResource(R.drawable.doori_3);
                 Toast.makeText(this, "야 김민듀",Toast.LENGTH_SHORT).show(); break;
             default:
                 Log.d(TAG,"모르는 녀석 클릭");
